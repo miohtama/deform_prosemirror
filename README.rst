@@ -1,9 +1,9 @@
-deform_prosemirror README
+.. contents::
 
 Introduction
 ============
 
-This package provides ProseMirror rich text widget for deform forms.
+This package provides ProseMirror rich text widget for `Deform forms <http://deform.readthedocs.org/>`_.
 
 .. image:: screenshot.png
     :width: 500
@@ -18,7 +18,7 @@ Demo
 
 Run demo locally::
 
-    git clone
+    git clone git@github.com:miohtama/deform_prosemirror.git
     virtualenv venv
     source venv/bin/activate
     pip install -e .
@@ -32,8 +32,8 @@ Usage
 * Your base template must insert JS and CSS assets to the ``<head>``. Please note that there is a limitation that Deform executes ``<script>`` tags in ``<body>``.
 
 
-Rebuilding JavaScrit bundle
-===========================
+Rebuilding JavaScript bundle
+============================
 
 Install NPM and Node. Then::
 
