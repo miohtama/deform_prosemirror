@@ -5,6 +5,9 @@ Introduction
 
 This package provides ProseMirror rich text widget for deform forms.
 
+.. image:: screenshot.png
+    :width: 500
+
 About ProseMirror
 =================
 
