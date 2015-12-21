@@ -8,6 +8,7 @@ import {ProseMirror} from "../../prosemirror/src/edit/main";
 import "../../prosemirror/src/parse/markdown";
 import "../../prosemirror/src/serialize/markdown";
 import "../../prosemirror/src/menu/tooltipmenu";
+import "../../prosemirror/src/menu/menubar";
 
 window.ProseMirror = ProseMirror;
 

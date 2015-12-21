@@ -1,20 +1,35 @@
-<div tal:define="delayed_load delayed_load|field.widget.delayed_load;
-                 oid oid|field.oid;
-                 name name|field.name;"
+<div tal:define="oid oid|field.oid; name name|field.name;"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    i18n:domain="deform"
     tal:omit-tag="">
 
-    <style type="text/css">
-      .deform .prosemirror-preload{
-          border: 1px solid #CCC;
-          height: 240px;
-          display: block;
-      }
-    </style>
+  <textarea id="${oid}" name="${name}" class='tinymce form-control' tal:content="structure cstruct"></textarea>
 
-  <div data-widget-input="${oid}">
+  <div id="${oid}-prosemirror" class="prosemirror"></div>
 
-  <input id="${oid}" type="hidden" tal:attributes="value cstruct"/>
+  <script type="text/javascript">
+    (function($){
+      "use strict";
 
+      deform.addCallback('${oid}', function(oid) {
+
+        var sourceTextArea = document.getElementById("${oid}");
+        var content = sourceTextArea.value;
+        sourceTextArea.style.display = "none";
+
+        var proseMirrorElem = document.getElementById("${oid}-prosemirror");
+
+        var options = ${field.widget.get_prosemirror_options_as_json()};
+        options.place = proseMirrorElem;
+        options.doc = content;
+        var pm = new ProseMirror(options);
+        pm.focus();
+
+        // Serialize edited text as Markdown every time the editor loses the focus
+        pm.on("blur", function() {
+            sourceTextArea.value = pm.getContent("markdown");
+        });
+
+      });
+    })(jQuery);
+  </script>
 </div>

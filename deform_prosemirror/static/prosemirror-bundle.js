@@ -9,15 +9,15 @@ require("../../prosemirror/src/serialize/markdown");
 
 require("../../prosemirror/src/menu/tooltipmenu");
 
-/**
- * npm install --save-dev browserify babelify babel-preset-es2015
- *
- * node_modules/.bin/browserify dist/prosemirror.js -o dist/prosermirror-bundle.js -t [ babelify --presets [ es2015 ] ]
- */
+require("../../prosemirror/src/menu/menubar");
 
-window.ProseMirror = _main.ProseMirror;
+window.ProseMirror = _main.ProseMirror; /**
+                                         * npm install --save-dev browserify babelify babel-preset-es2015
+                                         *
+                                         * node_modules/.bin/browserify dist/prosemirror.js -o dist/prosermirror-bundle.js -t [ babelify --presets [ es2015 ] ]
+                                         */
 
-},{"../../prosemirror/src/edit/main":79,"../../prosemirror/src/menu/tooltipmenu":86,"../../prosemirror/src/parse/markdown":98,"../../prosemirror/src/serialize/markdown":102}],2:[function(require,module,exports){
+},{"../../prosemirror/src/edit/main":79,"../../prosemirror/src/menu/menubar":85,"../../prosemirror/src/menu/tooltipmenu":87,"../../prosemirror/src/parse/markdown":99,"../../prosemirror/src/serialize/markdown":103}],2:[function(require,module,exports){
 (function (global){
 /*! https://mths.be/punycode v1.4.0 by @mathias */
 ;(function(root) {
@@ -8880,7 +8880,7 @@ defineCommand({
   key: "Down"
 });
 
-},{"../dom":68,"../model":91,"../transform":105,"../util/sortedinsert":117,"./char":70,"./keys":78,"./selection":82}],72:[function(require,module,exports){
+},{"../dom":68,"../model":92,"../transform":106,"../util/sortedinsert":118,"./char":70,"./keys":78,"./selection":82}],72:[function(require,module,exports){
 "use strict";
 
 var _dom = require("../dom");
@@ -9072,7 +9072,7 @@ function scanText(start, end) {
   }
 }
 
-},{"../model":91,"../parse/dom":96,"../transform/tree":113,"./selection":82}],74:[function(require,module,exports){
+},{"../model":92,"../parse/dom":97,"../transform/tree":114,"./selection":82}],74:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9231,7 +9231,7 @@ function redraw(pm, dirty, doc, prev) {
   scan(pm.content, doc, prev);
 }
 
-},{"../dom":68,"../model":91,"../serialize/dom":100,"./main":79}],75:[function(require,module,exports){
+},{"../dom":68,"../model":92,"../serialize/dom":101,"./main":79}],75:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -9717,7 +9717,7 @@ var History = exports.History = (function () {
   return History;
 })();
 
-},{"../model":91,"../transform":105}],76:[function(require,module,exports){
+},{"../model":92,"../transform":106}],76:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10261,7 +10261,7 @@ handlers.blur = function (pm) {
   pm.signal("blur");
 };
 
-},{"../dom":68,"../model":91,"../parse":97,"../parse/dom":96,"../parse/text":99,"../serialize/dom":100,"../serialize/text":103,"./capturekeys":69,"./domchange":73,"./keys":78,"./selection":82}],78:[function(require,module,exports){
+},{"../dom":68,"../model":92,"../parse":98,"../parse/dom":97,"../parse/text":100,"../serialize/dom":101,"../serialize/text":104,"./capturekeys":69,"./domchange":73,"./keys":78,"./selection":82}],78:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -11192,7 +11192,7 @@ var EditorTransform = (function (_Transform) {
   return EditorTransform;
 })(_transform.Transform);
 
-},{"../dom":68,"../model":91,"../parse":97,"../parse/text":99,"../serialize":101,"../serialize/text":103,"../transform":105,"../util/event":115,"../util/map":116,"../util/sortedinsert":117,"./commands":71,"./css":72,"./draw":74,"./history":75,"./input":77,"./keys":78,"./options":80,"./range":81,"./selection":82}],80:[function(require,module,exports){
+},{"../dom":68,"../model":92,"../parse":98,"../parse/text":100,"../serialize":102,"../serialize/text":104,"../transform":106,"../util/event":116,"../util/map":117,"../util/sortedinsert":118,"./commands":71,"./css":72,"./draw":74,"./history":75,"./input":77,"./keys":78,"./options":80,"./range":81,"./selection":82}],80:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11314,7 +11314,7 @@ function setOption(pm, name, value) {
   if (desc.update) desc.update(pm, value, old, false);
 }
 
-},{"../model":91,"./commands":71}],81:[function(require,module,exports){
+},{"../model":92,"./commands":71}],81:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -11514,7 +11514,7 @@ var RangeTracker = (function () {
   return RangeTracker;
 })();
 
-},{"../util/event":115}],82:[function(require,module,exports){
+},{"../util/event":116}],82:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -12283,7 +12283,7 @@ function setDOMSelectionToPos(pm, pos) {
   sel.addRange(range);
 }
 
-},{"../dom":68,"../model":91}],83:[function(require,module,exports){
+},{"../dom":68,"../model":92}],83:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12675,7 +12675,195 @@ function tooltipParamHandler(pm, command, callback) {
 // FIXME check for obsolete styles
 (0, _dom.insertCSS)("\n\n.ProseMirror-menu {\n  margin: 0 -4px;\n  line-height: 1;\n  white-space: pre;\n}\n.ProseMirror-tooltip .ProseMirror-menu {\n  width: -webkit-fit-content;\n  width: fit-content;\n}\n\n.ProseMirror-tooltip-back-wrapper {\n  padding-left: 12px;\n}\n.ProseMirror-tooltip-back {\n  position: absolute;\n  top: 5px; left: 5px;\n  cursor: pointer;\n}\n.ProseMirror-tooltip-back:after {\n  content: \"«\";\n}\n\n.ProseMirror-menuicon {\n  margin: 0 7px;\n}\n\n.ProseMirror-menuseparator {\n  display: inline-block;\n}\n.ProseMirror-menuseparator:after {\n  content: \"︙\";\n  opacity: 0.5;\n  padding: 0 4px;\n  vertical-align: baseline;\n}\n\n.ProseMirror-select, .ProseMirror-select-menu {\n  border: 1px solid #777;\n  border-radius: 3px;\n  font-size: 90%;\n}\n\n.ProseMirror-select {\n  padding: 1px 12px 1px 4px;\n  display: inline-block;\n  vertical-align: middle;\n  position: relative;\n  cursor: pointer;\n  margin: 0 8px;\n}\n\n.ProseMirror-select-command-textblockType {\n  min-width: 3.2em;\n}\n\n.ProseMirror-select:after {\n  content: \"▿\";\n  color: #777;\n  position: absolute;\n  right: 4px;\n}\n\n.ProseMirror-select-menu {\n  position: absolute;\n  background: #444;\n  color: white;\n  padding: 2px 2px;\n  z-index: 15;\n}\n.ProseMirror-select-menu div {\n  cursor: pointer;\n  padding: 0 1em 0 2px;\n}\n.ProseMirror-select-menu div:hover {\n  background: #777;\n}\n\n");
 
-},{"../dom":68,"../edit":76,"../util/sortedinsert":117,"./icons":83,"./tooltip":85}],85:[function(require,module,exports){
+},{"../dom":68,"../edit":76,"../util/sortedinsert":118,"./icons":83,"./tooltip":86}],85:[function(require,module,exports){
+"use strict";
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _edit = require("../edit");
+
+var _dom = require("../dom");
+
+var _update = require("./update");
+
+var _menu = require("./menu");
+
+function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+(0, _edit.defineOption)("menuBar", false, function (pm, value) {
+  if (pm.mod.menuBar) pm.mod.menuBar.detach();
+  pm.mod.menuBar = value ? new MenuBar(pm, value) : null;
+});
+
+var BarDisplay = (function () {
+  function BarDisplay(container, resetFunc) {
+    _classCallCheck(this, BarDisplay);
+
+    this.container = container;
+    this.resetFunc = resetFunc;
+  }
+
+  _createClass(BarDisplay, [{
+    key: "clear",
+    value: function clear() {
+      this.container.textContent = "";
+    }
+  }, {
+    key: "reset",
+    value: function reset() {
+      this.resetFunc();
+    }
+  }, {
+    key: "show",
+    value: function show(dom) {
+      this.clear();
+      this.container.appendChild(dom);
+    }
+  }, {
+    key: "enter",
+    value: function enter(dom, back) {
+      var current = this.container.firstChild;
+      if (current) {
+        current.style.position = "absolute";
+        current.style.opacity = "0.5";
+      }
+      var backButton = (0, _dom.elt)("div", { class: "ProseMirror-menubar-back" });
+      backButton.addEventListener("mousedown", function (e) {
+        e.preventDefault();e.stopPropagation();
+        back();
+      });
+      var added = (0, _dom.elt)("div", { class: "ProseMirror-menubar-sliding" }, backButton, dom);
+      this.container.appendChild(added);
+      added.getBoundingClientRect(); // Force layout for transition
+      added.style.left = "0";
+      added.addEventListener("transitionend", function () {
+        if (current && current.parentNode) current.parentNode.removeChild(current);
+      });
+    }
+  }]);
+
+  return BarDisplay;
+})();
+
+var MenuBar = (function () {
+  function MenuBar(pm, config) {
+    var _this = this;
+
+    _classCallCheck(this, MenuBar);
+
+    this.pm = pm;
+
+    this.menuElt = (0, _dom.elt)("div", { class: "ProseMirror-menubar-inner" });
+    this.wrapper = (0, _dom.elt)("div", { class: "ProseMirror-menubar" }, (0, _dom.elt)("div", { class: "ProseMirror-menu", style: "visibility: hiffdden; z-index: 100" }, (0, _dom.elt)("span", { class: "ProseMirror-menuicon" }, (0, _dom.elt)("div", { class: "ProseMirror-icon" }, "x"))), this.menuElt);
+    pm.wrapper.insertBefore(this.wrapper, pm.wrapper.firstChild);
+
+    this.update = new _update.MenuUpdate(pm, "selectionChange change activeMarkChange", function () {
+      return _this.prepareUpdate();
+    });
+    this.menu = new _menu.Menu(pm, new BarDisplay(this.menuElt, function () {
+      return _this.resetMenu();
+    }));
+
+    this.menuItems = config && config.items || (0, _menu.commandGroups)(pm, "inline", "block", "history");
+    this.update.force();
+
+    this.floating = false;
+    if (config && config.float) {
+      this.updateFloat();
+      this.scrollFunc = function () {
+        if (!document.body.contains(_this.pm.wrapper)) window.removeEventListener("scroll", _this.scrollFunc);else _this.updateFloat();
+      };
+      window.addEventListener("scroll", this.scrollFunc);
+    }
+  }
+
+  _createClass(MenuBar, [{
+    key: "detach",
+    value: function detach() {
+      this.update.detach();
+      this.wrapper.parentNode.removeChild(this.wrapper);
+
+      if (this.scrollFunc) window.removeEventListener("scroll", this.scrollFunc);
+    }
+  }, {
+    key: "prepareUpdate",
+    value: function prepareUpdate() {
+      var _this2 = this;
+
+      var scrollCursor = this.prepareScrollCursor();
+      return function () {
+        if (!_this2.menu.active) _this2.resetMenu();
+        if (scrollCursor) scrollCursor();
+      };
+    }
+  }, {
+    key: "resetMenu",
+    value: function resetMenu() {
+      this.menu.show(this.menuItems);
+    }
+  }, {
+    key: "updateFloat",
+    value: function updateFloat() {
+      var editorRect = this.pm.wrapper.getBoundingClientRect();
+      if (this.floating) {
+        if (editorRect.top >= 0 || editorRect.bottom < this.menuElt.offsetHeight + 10) {
+          this.floating = false;
+          this.menuElt.style.position = this.menuElt.style.left = this.menuElt.style.width = "";
+          this.menuElt.style.display = "";
+        } else {
+          var border = (this.pm.wrapper.offsetWidth - this.pm.wrapper.clientWidth) / 2;
+          this.menuElt.style.left = editorRect.left + border + "px";
+          this.menuElt.style.display = editorRect.top > window.innerHeight ? "none" : "";
+        }
+      } else {
+        if (editorRect.top < 0 && editorRect.bottom >= this.menuElt.offsetHeight + 10) {
+          this.floating = true;
+          var menuRect = this.menuElt.getBoundingClientRect();
+          this.menuElt.style.left = menuRect.left + "px";
+          this.menuElt.style.width = menuRect.width + "px";
+          this.menuElt.style.position = "fixed";
+        }
+      }
+    }
+  }, {
+    key: "prepareScrollCursor",
+    value: function prepareScrollCursor() {
+      var _this3 = this;
+
+      if (!this.floating) return null;
+      var head = this.pm.selection.head;
+      if (!head) return null;
+      var cursorPos = this.pm.coordsAtPos(head);
+      var menuRect = this.menuElt.getBoundingClientRect();
+      if (cursorPos.top < menuRect.bottom && cursorPos.bottom > menuRect.top) {
+        var _ret = (function () {
+          var scrollable = findWrappingScrollable(_this3.pm.wrapper);
+          if (scrollable) return {
+              v: function v() {
+                return scrollable.scrollTop -= menuRect.bottom - cursorPos.top;
+              }
+            };
+        })();
+
+        if ((typeof _ret === "undefined" ? "undefined" : _typeof(_ret)) === "object") return _ret.v;
+      }
+    }
+  }]);
+
+  return MenuBar;
+})();
+
+function findWrappingScrollable(node) {
+  for (var cur = node.parentNode; cur; cur = cur.parentNode) {
+    if (cur.scrollHeight > cur.clientHeight) return cur;
+  }
+}
+
+(0, _dom.insertCSS)("\n.ProseMirror-menubar {\n  position: relative;\n  margin-bottom: 3px;\n  border-top-left-radius: inherit;\n  border-top-right-radius: inherit;\n}\n\n.ProseMirror-menubar-inner {\n  color: #666;\n  padding: 1px 6px;\n  top: 0; left: 0; right: 0;\n  position: absolute;\n  border-bottom: 1px solid silver;\n  background: white;\n  z-index: 10;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  overflow: hidden;\n  border-top-left-radius: inherit;\n  border-top-right-radius: inherit;\n}\n\n.ProseMirror-menubar .ProseMirror-icon-active {\n  background: #eee;\n}\n\n.ProseMirror-menubar input[type=\"text\"],\n.ProseMirror-menubar textarea {\n  background: #eee;\n  color: black;\n  border: none;\n  outline: none;\n  width: 100%;\n  box-sizing: -moz-border-box;\n  box-sizing: border-box;\n}\n\n.ProseMirror-menubar input[type=\"text\"] {\n  padding: 0 4px;\n}\n\n.ProseMirror-menubar form {\n  position: relative;\n  padding: 2px 4px;\n}\n\n.ProseMirror-menubar .ProseMirror-blocktype {\n  border: 1px solid #ccc;\n  min-width: 4em;\n}\n.ProseMirror-menubar .ProseMirror-blocktype:after {\n  color: #ccc;\n}\n\n.ProseMirror-menubar-sliding {\n  -webkit-transition: left 0.2s ease-out;\n  -moz-transition: left 0.2s ease-out;\n  transition: left 0.2s ease-out;\n  position: relative;\n  left: 100%;\n  width: 100%;\n  box-sizing: -moz-border-box;\n  box-sizing: border-box;\n  padding-left: 16px;\n  background: white;\n}\n\n.ProseMirror-menubar-back {\n  position: absolute;\n  height: 100%;\n  margin-top: -1px;\n  padding-bottom: 2px;\n  width: 10px;\n  left: 0;\n  border-right: 1px solid silver;\n  cursor: pointer;\n}\n.ProseMirror-menubar-back:after {\n  content: \"«\";\n}\n\n");
+
+},{"../dom":68,"../edit":76,"./menu":84,"./update":88}],86:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -12809,7 +12997,7 @@ var Tooltip = exports.Tooltip = (function () {
 
 (0, _dom.insertCSS)("\n\n.ProseMirror-tooltip {\n  position: absolute;\n  display: none;\n  box-sizing: border-box;\n  -moz-box-sizing: border- box;\n  overflow: hidden;\n\n  -webkit-transition: width 0.4s ease-out, height 0.4s ease-out, left 0.4s ease-out, top 0.4s ease-out, opacity 0.2s;\n  -moz-transition: width 0.4s ease-out, height 0.4s ease-out, left 0.4s ease-out, top 0.4s ease-out, opacity 0.2s;\n  transition: width 0.4s ease-out, height 0.4s ease-out, left 0.4s ease-out, top 0.4s ease-out, opacity 0.2s;\n  opacity: 0;\n\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin: 0;\n  background: #444;\n  border-color: #777;\n  color: white;\n\n  z-index: 5;\n}\n\n.ProseMirror-tooltip-pointer {\n  content: \"\";\n  position: absolute;\n  display: none;\n  width: 0; height: 0;\n\n  -webkit-transition: left 0.4s ease-out, top 0.4s ease-out, opacity 0.2s;\n  -moz-transition: left 0.4s ease-out, top 0.4s ease-out, opacity 0.2s;\n  transition: left 0.4s ease-out, top 0.4s ease-out, opacity 0.2s;\n  opacity: 0;\n\n  z-index: 10;\n}\n\n.ProseMirror-tooltip-pointer-above {\n  border-left: 6px solid transparent;\n  border-right: 6px solid transparent;\n  border-top: 6px solid #444;\n}\n\n.ProseMirror-tooltip-pointer-below {\n  border-left: 6px solid transparent;\n  border-right: 6px solid transparent;\n  border-bottom: 6px solid #444;\n}\n\n.ProseMirror-tooltip-pointer-right {\n  border-top: 6px solid transparent;\n  border-bottom: 6px solid transparent;\n  border-right: 6px solid #444;\n}\n\n.ProseMirror-tooltip-pointer-left {\n  border-top: 6px solid transparent;\n  border-bottom: 6px solid transparent;\n  border-left: 6px solid #444;\n}\n\n.ProseMirror-tooltip input[type=\"text\"],\n.ProseMirror-tooltip textarea {\n  background: #666;\n  color: white;\n  border: none;\n  outline: none;\n}\n\n.ProseMirror-tooltip input[type=\"text\"] {\n  padding: 0 4px;\n}\n\n");
 
-},{"../dom":68}],86:[function(require,module,exports){
+},{"../dom":68}],87:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -12987,7 +13175,7 @@ function topOfNodeSelection(pm) {
 
 (0, _dom.insertCSS)("\n\n.ProseMirror-tooltipmenu-linktext a {\n  color: white;\n  text-decoration: none;\n  padding: 0 5px;\n}\n\n.ProseMirror-tooltipmenu-linktext a:hover {\n  text-decoration: underline;\n}\n\n");
 
-},{"../dom":68,"../edit":76,"./menu":84,"./tooltip":85,"./update":87}],87:[function(require,module,exports){
+},{"../dom":68,"../edit":76,"./menu":84,"./tooltip":86,"./update":88}],88:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -13078,7 +13266,7 @@ var MenuUpdate = exports.MenuUpdate = (function () {
   return MenuUpdate;
 })();
 
-},{}],88:[function(require,module,exports){
+},{}],89:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -13466,7 +13654,7 @@ var defaultSpec = new _schema.SchemaSpec({
 // ProseMirror's default document schema.
 var defaultSchema = exports.defaultSchema = new _schema.Schema(defaultSpec);
 
-},{"./schema":95}],89:[function(require,module,exports){
+},{"./schema":96}],90:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13564,7 +13752,7 @@ function findDiffEnd(a, b) {
   return { a: new _pos.Pos(pathA, offA), b: new _pos.Pos(pathB, offB) };
 }
 
-},{"./pos":94}],90:[function(require,module,exports){
+},{"./pos":95}],91:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -14256,7 +14444,7 @@ if (typeof Symbol != "undefined") {
   };
 }
 
-},{}],91:[function(require,module,exports){
+},{}],92:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14482,7 +14670,7 @@ Object.defineProperty(exports, "findDiffEnd", {
         }
 });
 
-},{"./defaultschema":88,"./diff":89,"./fragment":90,"./mark":92,"./node":93,"./pos":94,"./schema":95}],92:[function(require,module,exports){
+},{"./defaultschema":89,"./diff":90,"./fragment":91,"./mark":93,"./node":94,"./pos":95,"./schema":96}],93:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -14597,7 +14785,7 @@ var Mark = exports.Mark = (function () {
   return Mark;
 })();
 
-},{}],93:[function(require,module,exports){
+},{}],94:[function(require,module,exports){
 "use strict";
 
 var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
@@ -15216,7 +15404,7 @@ function isEmpty(obj) {
   }return true;
 }
 
-},{"./fragment":90,"./mark":92,"./pos":94}],94:[function(require,module,exports){
+},{"./fragment":91,"./mark":93,"./pos":95}],95:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -15412,7 +15600,7 @@ var Pos = exports.Pos = (function () {
   return Pos;
 })();
 
-},{}],95:[function(require,module,exports){
+},{}],96:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -16310,7 +16498,7 @@ var Schema = (function () {
 
 exports.Schema = Schema;
 
-},{"../util/error":114,"./fragment":90,"./mark":92,"./node":93}],96:[function(require,module,exports){
+},{"../util/error":115,"./fragment":91,"./mark":93,"./node":94}],97:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -16699,7 +16887,7 @@ _model.StrongMark.register("parseDOM", { tag: "strong", parse: "mark" });
 
 _model.CodeMark.register("parseDOM", { tag: "code", parse: "mark" });
 
-},{"../model":91,"./index":97}],97:[function(require,module,exports){
+},{"../model":92,"./index":98}],98:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16766,7 +16954,7 @@ defineSource("json", function (schema, json) {
   return schema.nodeFromJSON(json);
 });
 
-},{}],98:[function(require,module,exports){
+},{}],99:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -17089,7 +17277,7 @@ _model.CodeMark.register("parseMarkdown", { token: "code_inline", parse: functio
     state.closeMark(this);
   } });
 
-},{"../model":91,"./index":97,"markdown-it":6}],99:[function(require,module,exports){
+},{"../model":92,"./index":98,"markdown-it":6}],100:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17122,7 +17310,7 @@ function fromText(schema, text) {
 
 (0, _index.defineSource)("text", fromText);
 
-},{"./index":97}],100:[function(require,module,exports){
+},{"./index":98}],101:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -17417,7 +17605,7 @@ def(_model.LinkMark, function (mark, s) {
     title: mark.attrs.title });
 });
 
-},{"../model":91,"./index":101}],101:[function(require,module,exports){
+},{"../model":92,"./index":102}],102:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17480,7 +17668,7 @@ defineTarget("json", function (doc) {
   return doc.toJSON();
 });
 
-},{}],102:[function(require,module,exports){
+},{}],103:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -17834,7 +18022,7 @@ defMark(_model.LinkMark, "[", function (state, mark) {
 
 defMark(_model.CodeMark, "`", "`");
 
-},{"../model":91,"./index":101}],103:[function(require,module,exports){
+},{"../model":92,"./index":102}],104:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -17879,7 +18067,7 @@ function toText(doc) {
 
 (0, _index.defineTarget)("text", toText);
 
-},{"../model":91,"./index":101}],104:[function(require,module,exports){
+},{"../model":92,"./index":102}],105:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18165,7 +18353,7 @@ _transform.Transform.prototype.setNodeType = function (pos, type, attrs) {
   return this;
 };
 
-},{"../model":91,"./map":107,"./step":111,"./transform":112,"./tree":113}],105:[function(require,module,exports){
+},{"../model":92,"./map":108,"./step":112,"./transform":113,"./tree":114}],106:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18254,7 +18442,7 @@ require("./split");
 
 require("./replace");
 
-},{"./ancestor":104,"./join":106,"./map":107,"./mark":108,"./replace":109,"./split":110,"./step":111,"./transform":112}],106:[function(require,module,exports){
+},{"./ancestor":105,"./join":107,"./map":108,"./mark":109,"./replace":110,"./split":111,"./step":112,"./transform":113}],107:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -18337,7 +18525,7 @@ _transform.Transform.prototype.join = function (at) {
   return this;
 };
 
-},{"../model":91,"./map":107,"./step":111,"./transform":112}],107:[function(require,module,exports){
+},{"../model":92,"./map":108,"./step":112,"./transform":113}],108:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -18656,7 +18844,7 @@ var Remapping = exports.Remapping = (function () {
   return Remapping;
 })();
 
-},{"../model":91}],108:[function(require,module,exports){
+},{"../model":92}],109:[function(require,module,exports){
 "use strict";
 
 var _model = require("../model");
@@ -18836,7 +19024,7 @@ _transform.Transform.prototype.clearMarkup = function (from, to, newParent) {
   }return this;
 };
 
-},{"../model":91,"./step":111,"./transform":112,"./tree":113}],109:[function(require,module,exports){
+},{"../model":92,"./step":112,"./transform":113,"./tree":114}],110:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19151,7 +19339,7 @@ _transform.Transform.prototype.insertText = function (pos, text) {
   return this.insert(pos, this.doc.type.schema.text(text, this.doc.marksAt(pos)));
 };
 
-},{"../model":91,"./map":107,"./step":111,"./transform":112,"./tree":113}],110:[function(require,module,exports){
+},{"../model":92,"./map":108,"./step":112,"./transform":113,"./tree":114}],111:[function(require,module,exports){
 "use strict";
 
 var _model = require("../model");
@@ -19240,7 +19428,7 @@ _transform.Transform.prototype.splitIfNeeded = function (pos) {
   return this;
 };
 
-},{"../model":91,"./map":107,"./step":111,"./transform":112}],111:[function(require,module,exports){
+},{"../model":92,"./map":108,"./step":112,"./transform":113}],112:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -19424,7 +19612,7 @@ var StepResult = exports.StepResult = function StepResult(doc) {
 
 var steps = Object.create(null);
 
-},{"../model":91,"./map":107}],112:[function(require,module,exports){
+},{"../model":92,"./map":108}],113:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -19528,7 +19716,7 @@ var Transform = (function () {
 
 exports.Transform = Transform;
 
-},{"./map":107,"./step":111}],113:[function(require,module,exports){
+},{"./map":108,"./step":112}],114:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19621,7 +19809,7 @@ function samePathDepth(a, b) {
   }
 }
 
-},{"../model":91}],114:[function(require,module,exports){
+},{"../model":92}],115:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -19671,7 +19859,7 @@ function functionName(f) {
   return match && match[1];
 }
 
-},{}],115:[function(require,module,exports){
+},{}],116:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -19757,7 +19945,7 @@ function eventMixin(ctor) {
   }
 }
 
-},{}],116:[function(require,module,exports){
+},{}],117:[function(require,module,exports){
 "use strict";
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -19814,7 +20002,7 @@ var Map = exports.Map = window.Map || (function () {
   return _class;
 })();
 
-},{}],117:[function(require,module,exports){
+},{}],118:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
