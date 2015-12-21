@@ -12,36 +12,9 @@
           display: block;
       }
     </style>
-  <textarea id="${oid}" name="${name}"
-            class='tinymce form-control' tal:content="structure cstruct" />
-  <span id="${oid}-preload" class="prosemirror-preload"
-        tal:content="structure cstruct" />
-  <script type="text/javascript">
-    (function($){
 
-      // Deform JS integration
-      deform.addCallback('${oid}', function(oid) {
-        var jqoid = $('#' + oid);
-        var jqoid_preload = $('#' + oid + '-preload');
-        jqoid.hide();
-        jqoid_preload.click(function(){
-          jqoid.show();
-          jqoid_preload.remove();
-          tinyMCE.init({
-            body_class: 'form-control',
-            elements: oid
-          });
-          jqoid_preload.unbind('click');
-        });
-        if (!${str(bool(delayed_load)).lower()}) {
-          jqoid_preload.click();
-        }
-      });
+  <div data-widget-input="${oid}">
 
-      // Called before form save
-      $().bind('form.pre.serialize', function(event, $form, options) {
-        tinyMCE.triggerSave();
-      });
-    })(jQuery);
-  </script>
+  <input id="${oid}" type="hidden" tal:attributes="value cstruct"/>
+
 </div>

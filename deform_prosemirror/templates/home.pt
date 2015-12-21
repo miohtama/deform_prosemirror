@@ -16,7 +16,7 @@
     <!-- Custom styles for this scaffold -->
     <link href="${request.static_url('deform_prosemirror:static/theme.css')}" rel="stylesheet">
 
-    <tal:tag repeat="tag widget_tags" tal:replace="structure tag" />
+    <tal:tag repeat="tag widget_css_tags" tal:replace="structure tag" />
 
   </head>
 
@@ -37,5 +37,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="//oss.maxcdn.com/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//oss.maxcdn.com/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <tal:tag repeat="tag widget_js_tags" tal:replace="structure tag" />
   </body>
 </html>

@@ -6,7 +6,8 @@ import deform
 import colander
 
 from .widget import ProseMirrorWidget
-from .widget import get_widget_resource_tags
+from .widget import get_widget_js_tags
+from .widget import get_widget_css_tags
 
 
 class MySchema(CSRFSchema):
@@ -41,7 +42,8 @@ def home(request):
     else:
         rendered_form = form.render()
 
-    widget_tags = get_widget_resource_tags(request, form)
+    widget_js_tags = get_widget_js_tags(request, form)
+    widget_css_tags = get_widget_css_tags(request, form)
 
     return locals()
 
